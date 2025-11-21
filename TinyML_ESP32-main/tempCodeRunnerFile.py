@@ -1,4 +1,3 @@
-print("Hello Core IOT")
 import paho.mqtt.client as mqtt
 import json
 import time
@@ -8,7 +7,7 @@ import time
 # --------------------------------------
 THINGSBOARD_HOST = 'app.coreiot.io'  # replace with your gateway address
 THINGSBOARD_PORT = 1883  # default is 1883 for non-TLS
-ACCESS_TOKEN = 'XoMXWzpgHN1l9hcdcDMj'  # replace with your device access token
+ACCESS_TOKEN = 'Kh@90404002'  # replace with your device access token
 
 
 # --------------------------------------
@@ -42,15 +41,16 @@ client.loop_start()
 try:
     while True:
         # Example telemetry payload
+
         telemetry = {
-            "ESP32_Device1": [
-                {"ts": int(time.time() * 1000), "values": {"temperature": 22.5, "humidity": 55,'longitude':10.772177795237967, 'latitude':106.65789938528096}}
+            "ESP32_001": [
+                {"ts": int(time.time() * 1000), "values": {"temperature": 22.5, "humidity": 55}}
             ],
-            "ESP32_Device2": [
-                {"ts": int(time.time() * 1000), "values": {"temperature": 30.5, "humidity": 80,'longitude':10.772177795237967, 'latitude':106.65789938528096}}
+            "ESP32_002": [
+                {"ts": int(time.time() * 1000), "values": {"temperature": 30.5, "humidity": 80}}
             ],
-            "ESP32_Device3": [
-                {"ts": int(time.time() * 1000), "values": {"temperature": 10.5, "humidity": 20,'longitude':10.772177795237967, 'latitude':106.65789938528096}}
+            "ESP32_003": [
+                {"ts": int(time.time() * 1000), "values": {"temperature": 10.5, "humidity": 20}}
             ]
         }
 
